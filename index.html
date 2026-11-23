@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>try{history.scrollRestoration='manual'}catch(e){}try{if(location.hash)history.replaceState(null,'',location.pathname+location.search)}catch(e){}function top0(){try{window.scrollTo({top:0,left:0,behavior:'instant'})}catch(e){}try{document.documentElement.scrollIntoView({block:'start',inline:'nearest',behavior:'instant'})}catch(e){}}top0();window.addEventListener('load',top0);window.addEventListener('pageshow',top0);setTimeout(top0,150);setTimeout(top0,600);setTimeout(top0,1200);</script>
+<title>Wingy – Downtown Beirut</title>
+<meta name="description" content="Wingy, downtown Beirut. Open daily 12 pm to 2 am. Menu, hours and directions.">
+<meta name="theme-color" content="#8c0f14">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wingy – Downtown Beirut">
+<meta property="og:description" content="Hot wings, burgers and cold drinks. Open daily 12 pm to 2 am.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Wingy","telephone":"+96176497255","address":{"@type":"PostalAddress","addressLocality":"Beirut","addressCountry":"LB"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"12:00","closes":"02:00"}]}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --black:#000;
+  --ink:#140607;
+  --red:#8c0f14;
+  --deep:#5c090d;
+  --bone:#f3e8e2;
+  --muted:#b9a39c;
+  --line:#3a1316;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--black);color:var(--bone);font:400 1.0625rem/1.55 "Work Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+
+/* Hero: the wordmark is the one bold move */
+.hero{background:var(--red);color:var(--black);padding:2.5rem 0 3rem;overflow:hidden}
+.hero .name{font:400 clamp(5.5rem,29vw,19rem)/.82 Anton,Impact,"Arial Narrow",sans-serif;letter-spacing:-.01em;margin:0;text-transform:uppercase}
+.hero p{max-width:30rem;margin:1.5rem 0 1.75rem;font-size:1.25rem;font-weight:500;color:var(--black)}
+.status{display:inline-block;background:var(--black);color:var(--bone);padding:.35rem .8rem;border-radius:2rem;font-size:.95rem;font-weight:500;margin-bottom:1.25rem}
+.status i{display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:#7a7a7a;margin-right:.5rem}
+.status.open i{background:#ff4b3e}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.85rem 1.4rem;font-weight:600;text-decoration:none;border:2px solid var(--black);border-radius:.25rem}
+.btn.solid{background:var(--black);color:var(--bone)}
+.btn.line{color:var(--black)}
+.btn:focus-visible{outline:3px solid var(--bone);outline-offset:3px}
+.btn:hover{background:var(--deep);color:var(--bone)}
+
+/* Motion: one page-load sequence, a ticker, and hover feedback */
+.hero .name{overflow:hidden;padding:.05em 0}
+.name span{display:inline-block;transform:translateY(110%);animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(1.5s + var(--i)*90ms)}
+@keyframes rise{to{transform:translateY(0)}}
+.hero p,.status,.actions{opacity:0;animation:fadeup .7s ease-out forwards}
+.hero p{animation-delay:2.2s}
+.status{animation-delay:2.35s}
+.actions{animation-delay:2.5s}
+@keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.status.open i{animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,75,62,.7)}50%{box-shadow:0 0 0 .5rem rgba(255,75,62,0)}}
+.btn{transition:background .2s,color .2s,transform .2s}
+.btn:hover{transform:translateY(-3px)}
+.mq{background:var(--black);overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line);padding:.9rem 0}
+.mq-track{display:inline-flex;animation:scroll 26s linear infinite}
+.mq-track:hover{animation-play-state:paused}
+.mq-group{display:inline-flex;font:400 1.6rem/1 Anton,Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.mq-group span{display:inline-flex;align-items:center}
+.mq-group span::after{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--red);margin:0 1.75rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.item .p{transition:color .2s}
+.item .dots{transition:border-color .2s}
+.item:hover .p{color:#e0564d}
+.item:hover .dots{border-color:var(--red)}
+/* Intro screen when the site opens */
+#intro{position:fixed;inset:0;z-index:100;background:var(--black);display:flex;align-items:flex-start;justify-content:center;padding-top:min(30vh,16rem);animation:lift .75s cubic-bezier(.7,0,.2,1) 1.5s forwards}
+@keyframes lift{to{transform:translateY(-100%);visibility:hidden}}
+.in-box{display:inline-block;padding:0 1.25rem}
+.in-word{display:flex;overflow:hidden;padding:.05em .02em;font:400 clamp(5rem,26vw,15rem)/.9 Anton,Impact,sans-serif;text-transform:uppercase;color:var(--red)}
+.in-word span{display:inline-block;transform:translateY(110%) scale(.9);animation:pop .6s cubic-bezier(.2,1.2,.3,1) forwards;animation-delay:calc(.15s + var(--i)*.09s)}
+@keyframes pop{to{transform:none}}
+.in-bar{height:6px;width:0;background:var(--red);margin:.6rem 0 .9rem;animation:grow .7s cubic-bezier(.6,0,.2,1) .5s forwards}
+@keyframes grow{to{width:100%}}
+.in-sub{color:var(--bone);font-weight:500;opacity:0;animation:show .5s ease-out .9s forwards}
+@keyframes show{to{opacity:1}}
+@keyframes fadeout{to{opacity:0;visibility:hidden}}
+@media (prefers-reduced-motion:reduce){
+  #intro{animation:fadeout .6s ease 1.5s forwards}
+  .in-word span{transform:none;opacity:0;animation:show .6s ease forwards;animation-delay:calc(.1s + var(--i)*.1s)}
+  .in-bar{animation:none;width:100%}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .name span{animation:none;transform:none}
+  .hero p,.status,.actions{animation:none;opacity:1}
+  .status.open i{animation:none}
+  .mq-track{animation:none}
+  .btn{transition:none}
+  .btn:hover{transform:none}
+}
+
+section{padding:3.5rem 0}
+h2{font:400 clamp(2.25rem,7vw,3.5rem)/1 Anton,Impact,sans-serif;margin:0 0 2rem;text-transform:uppercase;letter-spacing:.01em}
+h3{font-size:1.25rem;margin:0 0 .25rem;color:#e0564d}
+.note{color:var(--muted);margin:0 0 1rem;font-size:.95rem}
+
+/* Menu */
+.menu{display:grid;gap:2.5rem 4rem;grid-template-columns:1fr}
+@media(min-width:44rem){.menu{grid-template-columns:1fr 1fr}}
+ul{list-style:none;margin:0;padding:0}
+.item{display:flex;align-items:baseline;gap:.6rem;padding:.55rem 0}
+.item .n{font-weight:600}
+.item .d{display:block;color:var(--muted);font-size:.92rem;font-weight:400}
+.item .dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-.3rem);min-width:1rem}
+.item .p{font-weight:600;white-space:nowrap}
+
+/* Hours + find us */
+.info{background:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cols{display:grid;gap:2.5rem;grid-template-columns:1fr}
+@media(min-width:44rem){.cols{grid-template-columns:1fr 1fr}}
+.big{font:400 clamp(2rem,6vw,3rem)/1.05 Anton,Impact,sans-serif;margin:0 0 .5rem}
+.info p{margin:.25rem 0}
+.link{display:inline-block;margin-top:1rem;font-weight:600;text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:var(--red)}
+.link:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+.qrbox{display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem 2.5rem}
+.qrbox h2{margin-bottom:.75rem}
+.qrbox p{margin:0;max-width:24rem}
+.qrimg{background:#fff;padding:.75rem;border-radius:.4rem;width:11rem;height:11rem;display:flex}
+.qrimg svg{width:100%;height:100%;display:block}
+
+.skip-intro #intro{display:none}
+.skip-intro .name span{animation-delay:calc(.1s + var(--i)*90ms)}
+.skip-intro .hero p{animation-delay:.6s}
+.skip-intro .status{animation-delay:.75s}
+.skip-intro .actions{animation-delay:.9s}
+.jump{display:flex;flex-wrap:wrap;gap:.6rem;margin:-1rem 0 2rem}
+.jump a{padding:.5rem 1rem;border:2px solid var(--red);border-radius:2rem;text-decoration:none;font-weight:600;transition:background .2s}
+.jump a:hover{background:var(--red)}
+.jump a:focus-visible{outline:3px solid var(--bone);outline-offset:3px}
+.menu>div{scroll-margin-top:1rem}
+.game{max-width:22rem}
+.hud{display:flex;justify-content:space-between;font-weight:600;margin-bottom:.5rem}
+.bar{height:.6rem;background:var(--line);border-radius:1rem;overflow:hidden;margin-bottom:.75rem}
+.bar i{display:block;height:100%;width:0;background:var(--red);transition:width .3s}
+#gc{display:block;width:100%;height:auto;aspect-ratio:4/5;background:#140607;border:2px solid var(--line);border-radius:.4rem}
+.gbtns{display:flex;flex-wrap:wrap;gap:.75rem;margin:1rem 0 .5rem}
+.gb{padding:.85rem 1.4rem;font:600 1rem "Work Sans",system-ui,sans-serif;border:2px solid var(--red);background:var(--red);color:var(--bone);border-radius:.25rem;cursor:pointer}
+.gb.alt{background:transparent}
+.gb:disabled{opacity:.5;cursor:default}
+.gb:focus-visible{outline:3px solid var(--bone);outline-offset:3px}
+.ticket{margin-top:2rem;max-width:22rem;padding:1.5rem;background:var(--red);color:var(--black);border:3px dashed var(--black);border-radius:.4rem}
+.ticket p{margin:.3rem 0}
+.tk-item{font:400 2.4rem/1 Anton,Impact,sans-serif;text-transform:uppercase}
+.tk-code{font:400 2rem/1.1 Anton,Impact,sans-serif;letter-spacing:.1em}
+.tk-live i{display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:var(--black);margin-right:.5rem;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:.2}}
+.ticket .gb{background:var(--black);border-color:var(--black);margin:.75rem 0}
+.ticket.used{opacity:.55}
+.dock{display:none}
+@media(max-width:43.99rem){
+  body{padding-bottom:4.5rem}
+  .dock{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--black);border-top:2px solid var(--red);padding-bottom:env(safe-area-inset-bottom,0px)}
+  .dock a{flex:1;text-align:center;padding:.95rem .25rem;font-weight:600;text-decoration:none}
+  .dock a+a{border-left:1px solid var(--line)}
+  .dock a:first-child{background:var(--red);color:var(--black)}
+}
+@media (prefers-reduced-motion:reduce){.tk-live i{animation:none}.bar i{transition:none}}
+.tag{display:inline-block;margin-left:.5rem;padding:.1rem .5rem;border-radius:.2rem;background:var(--red);color:var(--bone);font-size:.75rem;font-weight:600;vertical-align:middle}
+.favsec{padding-bottom:0}
+.favs{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:44rem){.favs{grid-template-columns:repeat(3,1fr)}}
+.fav-t{display:flex;flex-direction:column;justify-content:space-between;gap:2rem;min-height:12rem;padding:1.5rem;background:var(--red);color:var(--black);transition:background .2s,color .2s,transform .2s}
+.fav-t:hover{background:var(--deep);color:var(--bone);transform:translateY(-4px)}
+.fn{font:400 clamp(1.9rem,5vw,2.4rem)/1 Anton,Impact,sans-serif;text-transform:uppercase}
+.fp{font:400 2.6rem/1 Anton,Impact,sans-serif}
+.fd{display:block;font-weight:500;margin-top:.35rem;font-size:.95rem}
+@media (prefers-reduced-motion:reduce){.fav-t,.fav-t:hover{transition:none;transform:none}}
+
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.92rem}
+</style>
+</head>
+<body>
+
+<div id="intro" aria-hidden="true"><div class="in-box"><div class="in-word"><span style="--i:0">W</span><span style="--i:1">i</span><span style="--i:2">n</span><span style="--i:3">g</span><span style="--i:4">y</span></div><div class="in-bar"></div><div class="in-sub">Open daily until 2 am</div></div></div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="name" aria-label="Wingy"><span aria-hidden="true" style="--i:0">W</span><span aria-hidden="true" style="--i:1">i</span><span aria-hidden="true" style="--i:2">n</span><span aria-hidden="true" style="--i:3">g</span><span aria-hidden="true" style="--i:4">y</span></h1>
+    <p>Hot wings, burgers and cold drinks in downtown Beirut. Open every day until 2 am.</p>
+    <div class="status" id="status"><i></i><span>Open daily 12 pm to 2 am</span></div>
+    <div class="actions">
+      <a class="btn solid" href="tel:+96176497255">Call 76 497 255</a>
+      <a class="btn solid" href="https://wa.me/96176497255?text=Hi%20Wingy%2C%20I%27d%20like%20to%20order" target="_blank" rel="noopener">Order on WhatsApp</a>
+      <a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=Wingy+Downtown+Beirut" target="_blank" rel="noopener">Get directions</a>
+      <a class="btn line" href="#menu">See the menu</a>
+    </div>
+  </div>
+</header>
+
+<div class="mq" aria-hidden="true">
+  <div class="mq-track">
+    <div class="mq-group"><span>Open every day until 2 am</span><span>Hot wings</span><span>Downtown Beirut</span><span>Call 76 497 255</span></div>
+    <div class="mq-group"><span>Open every day until 2 am</span><span>Hot wings</span><span>Downtown Beirut</span><span>Call 76 497 255</span></div>
+  </div>
+</div>
+
+<main>
+<section class="favsec" id="favorites">
+  <div class="wrap">
+    <h2>Fan favorites</h2>
+    <div class="favs">
+      <div class="fav-t"><span class="fn">Classic buffalo wings</span><span><span class="fp">$12</span><span class="fd">12 pieces with your choice of dip</span></span></div>
+      <div class="fav-t"><span class="fn">Wingy burger</span><span><span class="fp">$10</span><span class="fd">Beef, cheddar, pickles, house sauce</span></span></div>
+      <div class="fav-t"><span class="fn">Cheese fries</span><span><span class="fp">$5</span><span class="fd">The perfect side for wings</span></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <h2>Menu</h2>
+    <nav class="jump" aria-label="Menu sections">
+      <a href="#wings">Wings</a>
+      <a href="#burgers">Burgers</a>
+      <a href="#sides">Sides</a>
+      <a href="#drinks">Drinks</a>
+    </nav>
+    <div class="menu">
+      <div id="wings">
+        <h3>Wings</h3>
+        <p class="note">Served with your choice of dip.</p>
+        <ul>
+          <li class="item"><span><span class="n">Classic buffalo, 6 pieces</span></span><span class="dots"></span><span class="p">$7</span></li>
+          <li class="item"><span><span class="n">Classic buffalo, 12 pieces</span><span class="tag">Popular</span></span><span class="dots"></span><span class="p">$12</span></li>
+          <li class="item"><span><span class="n">Honey garlic, 8 pieces</span><span class="tag">New</span></span><span class="dots"></span><span class="p">$9</span></li>
+          <li class="item"><span><span class="n">Extra hot, 8 pieces</span><span class="tag">Hot</span><span class="d">Habanero sauce. Ask for a drink with it.</span></span><span class="dots"></span><span class="p">$9</span></li>
+          <li class="item"><span><span class="n">Boneless bites</span></span><span class="dots"></span><span class="p">$8</span></li>
+        </ul>
+      </div>
+      <div id="burgers">
+        <h3>Burgers and sandwiches</h3>
+        <ul>
+          <li class="item"><span><span class="n">Wingy burger</span><span class="tag">Popular</span><span class="d">Beef patty, cheddar, pickles, house sauce</span></span><span class="dots"></span><span class="p">$10</span></li>
+          <li class="item"><span><span class="n">Crispy chicken burger</span></span><span class="dots"></span><span class="p">$9</span></li>
+          <li class="item"><span><span class="n">Buffalo chicken sandwich</span></span><span class="dots"></span><span class="p">$8</span></li>
+        </ul>
+      </div>
+      <div id="sides">
+        <h3>Sides</h3>
+        <ul>
+          <li class="item"><span><span class="n">French fries</span></span><span class="dots"></span><span class="p">$3</span></li>
+          <li class="item"><span><span class="n">Cheese fries</span></span><span class="dots"></span><span class="p">$5</span></li>
+          <li class="item"><span><span class="n">Coleslaw</span></span><span class="dots"></span><span class="p">$2</span></li>
+          <li class="item"><span><span class="n">Onion rings</span></span><span class="dots"></span><span class="p">$4</span></li>
+        </ul>
+      </div>
+      <div id="drinks">
+        <h3>Drinks</h3>
+        <ul>
+          <li class="item"><span><span class="n">Soft drinks</span></span><span class="dots"></span><span class="p">$2</span></li>
+          <li class="item"><span><span class="n">Fresh lemonade</span></span><span class="dots"></span><span class="p">$3</span></li>
+          <li class="item"><span><span class="n">Iced tea</span></span><span class="dots"></span><span class="p">$3</span></li>
+          <li class="item"><span><span class="n">Water</span></span><span class="dots"></span><span class="p">$1</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="play">
+  <div class="wrap">
+    <h2>Play and win</h2>
+    <p class="note" id="goalNote"></p>
+    <div class="game">
+      <div class="hud"><span>Time <b id="gTime">30</b></span><span>Round <b id="gRound">0</b></span><span>Coins <b id="gTotal">0</b></span></div>
+      <div class="bar"><i id="gBar"></i></div>
+      <canvas id="gc" width="320" height="400" role="img" aria-label="Wing catching game. Drag the basket, or use the arrow keys."></canvas>
+      <div class="gbtns"><button class="gb" id="gStart" type="button">Play</button><button class="gb alt" id="gClaim" type="button" hidden>Claim your free item</button></div>
+      <p class="note" id="gMsg" aria-live="polite"></p>
+    </div>
+    <div class="ticket" id="ticket" hidden>
+      <p>Your voucher</p>
+      <p class="tk-item" id="tkItem"></p>
+      <p class="tk-code" id="tkCode"></p>
+      <p id="tkDate"></p>
+      <p class="tk-live"><i></i><span id="tkClock"></span></p>
+      <button class="gb" id="tkUse" type="button">Staff: mark as used</button>
+      <p>Show this screen to our staff when you order. Valid today only.</p>
+    </div>
+  </div>
+</section>
+
+<section class="info" id="visit">
+  <div class="wrap cols">
+    <div>
+      <h2>Hours</h2>
+      <p class="big">Every day<br>12 pm to 2 am</p>
+      <p>Open seven days a week, including holidays.</p>
+    </div>
+    <div>
+      <h2>Find us</h2>
+      <p class="big">Downtown Beirut</p>
+      <p>Call us on <a href="tel:+96176497255">76 497 255</a>.</p>
+      <p>Or message us on <a href="https://wa.me/96176497255?text=Hi%20Wingy%2C%20I%27d%20like%20to%20order" target="_blank" rel="noopener">WhatsApp</a> to place an order.</p>
+      <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Wingy+Downtown+Beirut" target="_blank" rel="noopener">Open in Google Maps</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="qr" id="qr" hidden>
+  <div class="wrap qrbox">
+    <div class="qrimg" id="qrcode" role="img" aria-label="QR code that opens this page"></div>
+    <div>
+      <h2>Open it on your phone</h2>
+      <p>Point your phone's camera at the code to open this page.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Wingy, downtown Beirut. 76 497 255</div>
+</footer>
+
+<nav class="dock" aria-label="Quick actions">
+  <a href="tel:+96176497255">Call</a>
+  <a href="https://wa.me/96176497255?text=Hi%20Wingy%2C%20I%27d%20like%20to%20order" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=Wingy+Downtown+Beirut" target="_blank" rel="noopener">Directions</a>
+</nav>
+
+<script>
+(function(){
+  var el=document.getElementById('status');
+  try{
+    var h=parseInt(new Intl.DateTimeFormat('en-GB',{hour:'numeric',hour12:false,timeZone:'Asia/Beirut'}).format(new Date()),10)%24;
+    var open=(h>=12||h<2);
+    el.className='status'+(open?' open':'');
+    el.querySelector('span').textContent=open?'Open now until 2 am':'Closed now, opens at 12 pm';
+  }catch(e){el.className='status';}
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+(function(){
+  var PAGE_URL=(/^https?:$/.test(location.protocol)&&!/claude/.test(location.hostname))?location.origin+location.pathname:'https://claude.ai/artifact/AF6rXF5cMBvjiucQLNg1To';
+  try{
+    if(typeof qrcode!=='function')return;
+    var q=qrcode(0,'M');
+    q.addData(PAGE_URL);
+    q.make();
+    document.getElementById('qrcode').innerHTML=q.createSvgTag(4,0);
+    document.getElementById('qr').hidden=false;
+  }catch(e){}
+})();
+</script>
+<script>
+(function(){
+  var GOAL=60, PRIZE='French fries', ROUND=30;
+  var cv=document.getElementById('gc'); if(!cv)return;
+  var cx=cv.getContext('2d'), W=cv.width, H=cv.height;
+  var $=function(i){return document.getElementById(i)};
+  var mem={};
+  function get(k){try{return localStorage.getItem(k)}catch(e){return mem[k]||null}}
+  function put(k,v){try{localStorage.setItem(k,v)}catch(e){mem[k]=v}}
+  function today(){return new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Beirut'})}
+  var total=parseInt(get('wingyCoins'),10)||0, playing=false, items=[], round=0, left=ROUND, bx=W/2, last=0, spawn=0, clockOn=false, armed=false;
+  $('goalNote').textContent='Catch the wings, dodge the flames. Collect '+GOAL+' coins to win free '+PRIZE.toLowerCase()+'. Your coins are saved on this phone.';
+  function voucher(){try{return JSON.parse(get('wingyVoucher')||'null')}catch(e){return null}}
+  function ui(){
+    $('gTime').textContent=Math.max(0,Math.ceil(left));
+    $('gRound').textContent=round;
+    var shown=playing?total+round:total;
+    $('gTotal').textContent=shown;
+    $('gBar').style.width=Math.min(100,shown/GOAL*100)+'%';
+  }
+  function draw(){
+    cx.fillStyle='#140607';cx.fillRect(0,0,W,H);
+    cx.textAlign='center';cx.textBaseline='middle';cx.font='30px serif';
+    items.forEach(function(it){cx.fillText(it.bad?'\uD83D\uDD25':'\uD83C\uDF57',it.x,it.y)});
+    cx.font='46px serif';cx.fillText('\uD83E\uDDFA',bx,H-32);
+  }
+  function refresh(){
+    var v=voucher(), d=today(), has=v&&v.day===d;
+    $('gClaim').hidden=!(total>=GOAL&&!has);
+    if(has)showTicket(v);
+  }
+  function showTicket(v){
+    $('ticket').hidden=false;
+    $('ticket').className='ticket'+(v.used?' used':'');
+    $('tkItem').textContent='Free '+PRIZE;
+    $('tkCode').textContent=v.code;
+    $('tkDate').textContent=new Date().toLocaleDateString('en-GB',{timeZone:'Asia/Beirut'});
+    $('tkUse').disabled=!!v.used;
+    $('tkUse').textContent=v.used?'Used':'Staff: mark as used';
+    if(!clockOn){clockOn=true;var tick=function(){$('tkClock').textContent=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Beirut'})};tick();setInterval(tick,1000)}
+  }
+  function start(){
+    if(playing)return;
+    items=[];round=0;left=ROUND;spawn=0;last=performance.now();playing=true;
+    $('gStart').disabled=true;$('gMsg').textContent='';cv.style.touchAction='none';
+    requestAnimationFrame(loop);
+  }
+  function end(){
+    playing=false;cv.style.touchAction='auto';
+    total+=round;put('wingyCoins',String(total));
+    $('gStart').disabled=false;$('gStart').textContent='Play again';
+    var v=voucher(), has=v&&v.day===today();
+    var msg='Round over: '+round+' coins. You have '+Math.min(total,9999)+' of '+GOAL+'.';
+    if(total>=GOAL&&has)msg+=' You already claimed a prize today. Come back tomorrow to claim another.';
+    $('gMsg').textContent=msg;ui();refresh();
+  }
+  function loop(now){
+    if(!playing)return;
+    var dt=Math.min(.05,(now-last)/1000);last=now;left-=dt;spawn-=dt;
+    if(spawn<=0){
+      spawn=.45-(ROUND-left)*.006;
+      items.push({x:20+Math.random()*(W-40),y:-20,v:150+Math.random()*90+(ROUND-left)*3,bad:Math.random()<.22});
+    }
+    for(var i=items.length-1;i>=0;i--){
+      var it=items[i];it.y+=it.v*dt;
+      if(it.y>H-60&&it.y<H-20&&Math.abs(it.x-bx)<34){
+        if(it.bad){round=Math.max(0,round-3)}else{round++}
+        items.splice(i,1);
+      }else if(it.y>H+20){items.splice(i,1)}
+    }
+    draw();ui();
+    if(left<=0){left=0;end()}else{requestAnimationFrame(loop)}
+  }
+  function move(x){var r=cv.getBoundingClientRect();bx=Math.max(24,Math.min(W-24,(x-r.left)*W/r.width))}
+  cv.addEventListener('pointermove',function(e){if(playing)move(e.clientX)});
+  cv.addEventListener('pointerdown',function(e){if(playing)move(e.clientX)});
+  window.addEventListener('keydown',function(e){
+    if(!playing)return;
+    if(e.key==='ArrowLeft'){bx=Math.max(24,bx-24);e.preventDefault()}
+    if(e.key==='ArrowRight'){bx=Math.min(W-24,bx+24);e.preventDefault()}
+  });
+  $('gStart').addEventListener('click',start);
+  $('gClaim').addEventListener('click',function(){
+    if(total<GOAL)return;
+    total-=GOAL;put('wingyCoins',String(total));
+    var v={day:today(),code:'WG-'+Math.random().toString(36).slice(2,6).toUpperCase(),used:false};
+    put('wingyVoucher',JSON.stringify(v));
+    $('gMsg').textContent='You won! Show the voucher below to our staff.';
+    ui();refresh();
+  });
+  $('tkUse').addEventListener('click',function(){
+    var b=$('tkUse');
+    if(!armed){armed=true;b.textContent='Tap again to confirm';setTimeout(function(){if(armed){armed=false;b.textContent='Staff: mark as used'}},4000);return}
+    armed=false;var v=voucher();if(v){v.used=true;put('wingyVoucher',JSON.stringify(v));showTicket(v)}
+  });
+  var intro=$('intro');if(intro)intro.addEventListener('click',function(){document.documentElement.className='skip-intro'});
+  draw();ui();refresh();
+})();
+</script>
+</body>
+</html>
